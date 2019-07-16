@@ -1,9 +1,10 @@
-<form (submit)="onSubmit($event)">
+<form (submit)="onSubmit($event)" [formGroup]="scheduleForm">
     <div class="form-group">
         <label>To</label><br>
         <input [matDatepicker]="myDatepickerTo" (dateInput)="addEventTo('input', $event)">
         <mat-datepicker-toggle [for]="myDatepickerTo"></mat-datepicker-toggle>
         <mat-datepicker #myDatepickerTo></mat-datepicker>
+        <input type="time" formControlName="toTime">
         <!-- <input [owlDateTime]="dt2" placeholder="Date Time">
         <span [owlDateTimeTrigger]="dt2"><i class="fa fa-calendar"></i></span>
         <owl-date-time #dt2></owl-date-time> -->
@@ -17,5 +18,5 @@
         <mat-datepicker-toggle [for]="myDatepickerFrom"></mat-datepicker-toggle>
         <mat-datepicker #myDatepickerFrom></mat-datepicker>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" >Submit</button>
 </form>

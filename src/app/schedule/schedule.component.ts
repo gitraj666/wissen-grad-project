@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Time } from '@angular/common';
 
 
 @Component({
@@ -9,24 +10,31 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ScheduleComponent implements OnInit {
 
-  to: Date;
-  from: Date;
-  constructor() {
+  toDate: Date;
+  fromDate: Date;
+  toTime: Time;
+  fromTime: Time;
+  scheduleForm = this.fb.group({
+    toTime: ['']
+  });
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit() {
   }
 
   addEventTo(type, event) {
-    this.to = new Date(String(event.value));
-    console.log(this.to);
+    this.toDate = new Date(String(event.value));
+    console.log(this.toDate);
   }
   addEventFrom(type, event) {
-    this.from = new Date(String(event.value));
+    this.fromDate = new Date(String(event.value));
   }
 
   onSubmit(event) {
     event.preventDefault();
-    console.log('submitted');
+    this.toTime = this.scheduleForm.value.toTime;
+    this.fromTime = this.scheduleForm.value.fromTime;
+    console.log('submitted' + this.toTime);
   }
 }
