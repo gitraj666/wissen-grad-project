@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { InterviewerFormComponent } from './interviewer-form/interviewer-form.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'add', component: EmployeeFormComponent },
-  { path: 'schedule', component: ScheduleComponent}
+  { path: 'addPreferences', component: InterviewerFormComponent },
+  { path: 'schedule', component: ScheduleComponent }
 ];
 
 @NgModule({

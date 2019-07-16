@@ -1,0 +1,21 @@
+<form [formGroup]="interviewerForm" (submit)="onSubmit($event)">
+    <div class="form-group">
+        <label>Technology</label>
+        <input class="form-control" formControlName="technology" (keydown.space)="keyDownEventTech($event)">
+        <li *ngFor="let tech of techs">
+            {{tech}}
+        </li>
+    </div>
+    <div class="form-group">
+        <label>Level</label>
+        <input class="form-control" formControlName="level" (keydown.space)="keyDownEventLevel($event)"> 
+        <li *ngFor="let level of levels">
+            {{level}}
+        </li>
+    </div>
+    <div class="form-group">
+        <label>Employee Id</label>
+        <input class="form-control" formControlName="empId">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

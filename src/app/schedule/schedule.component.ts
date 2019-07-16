@@ -9,10 +9,10 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ScheduleComponent implements OnInit {
 
-  to: string;
-  from: string;
+  to: Date;
+  from: Date;
   constructor() {
-   }
+  }
 
   ngOnInit() {
   }
@@ -25,8 +25,8 @@ export class ScheduleComponent implements OnInit {
     this.from = new Date(String(event.value));
   }
 
-  onSubmit(event){
+  onSubmit(event) {
     event.preventDefault();
-    console.log("submitted");
+    console.log('submitted');
   }
 }

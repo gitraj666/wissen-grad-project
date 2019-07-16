@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
-
 import { Employee } from '../employee/employee';
 
 @Component({
@@ -34,3 +33,4 @@ export class EmployeeFormComponent implements OnInit {
   }
 
 }
+
